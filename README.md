@@ -17,4 +17,7 @@ python lector_transmisor.py
 ```
 
 * Receptor
+```console
+python receptor.py
+```
 
