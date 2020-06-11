@@ -12,8 +12,8 @@ app.get('/hello', function(req, res){
 
 io.on('connection',function(socket){
 	socket.on('nuevo_mensaje', function(msg){
-		console.log(msg);
-		io.sockets.emit('nuevo_mensaje',msg);
+		//console.log(msg);
+		io.sockets.emit('angulo',msg);
 	});
 });
 
