@@ -10,8 +10,17 @@ void loop(){
   
   if(Serial.read() == 's'){
     val = analogRead(analogPinA0);
-    angulo = map(val,0,1023,0,180);
-    Serial.println(angulo);
+    //angulo = map(val,0,1023,0,180);
+    if( val > 220)
+    {
+      Serial.println(0);
+    }
+    
+    else
+    {
+      Serial.println(70);
+    }
+    
     
   }
 
