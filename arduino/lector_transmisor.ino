@@ -14,12 +14,15 @@ void loop(){
     if( val > 220)
     {
       Serial.println(0);
+      delay(1000);
     }
     
     else
     {
       Serial.println(70);
     }
+    
+    delay(100);
     
     
   }
