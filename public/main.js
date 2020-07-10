@@ -17,7 +17,7 @@ function render(data){
 	}).join(" ");
 	*/
 
-	document.getElementById('messages').innerHTML = html;
+	document.getElementById('angulo').innerHTML = html;
 }
 
 
@@ -34,7 +34,7 @@ function init() {
 	try {
         socket = io.connect('http://192.168.100.21:5001', {'forceNew': true});
 
-        socket.on('messages', function(data){
+        socket.on('angulo', function(data){
             //console.log(data);
             render(data);
 	    arreglo.push(parseInt(data));
