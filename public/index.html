@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Senal en tiempo real</title>
+	<script src="socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="main.js"></script>
+</head>
+<body onload="init()">
+	<h1>Control: </h1>
+<input type="text" id="txt_1">
+	<input type="button" value="BOTON 1" id="btn_1" onclick="funcion_1();"> <br><br>
+	<input type = "text" id="txt_2">
+	<input type="button" value="BOTON 2" id="btn_2" onclick="funcion_2();"> <br><br>
+    <input type="text" id="txt_3">
+	<input type="button" value="BOTON 3" id="btn_3" onclick="funcion_3();"> <br><br>
+	<input type = "text" id="txt_4">
+	<input type="button" value="BOTON 4" id="btn_4" onclick="funcion_4();"> <br><br>
+	<input type="text" id="txt_5">
+	<input type="button" value="BOTON 5" id="btn_5" onclick="funcion_5();"> <br><br>
+	<input type="text" id="txt_6">
+	<input type="button" value="BOTON 6" id="btn_6" onclick="funcion_6();"> <br><br>
+	
+<h1>Datos recibidos: </h1>
+	<div id="messages"></div>
+	<div id="visualization"></div>
+
+
+</body>
+</html>
+
+
