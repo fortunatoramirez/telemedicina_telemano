@@ -27,7 +27,7 @@ var host = "ws://127.0.0.1:"+port; // No need to change this if using localhost
 
 //Declare Variables
 var socket;
-var explodedValues = [0,0,0,0,0,0,0,0,0,0]; //initial value for the plot = 0
+var explodedValues = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]; //initial value for the plot = 0
 var arreglo = [];
 
 function init() {
@@ -78,7 +78,27 @@ function drawVisualization() {
 	['7', arreglo[6]],
 	['8', arreglo[7]],
 	['9', arreglo[8]],
-	['10', arreglo[9]]
+	['10', arreglo[9]],
+	['11', arreglo[10]],
+	['12', arreglo[11]],
+	['13', arreglo[12]],
+	['14', arreglo[13]],
+	['15', arreglo[14]],
+	['16', arreglo[15]],
+	['17', arreglo[16]],
+	['18', arreglo[17]],
+	['19', arreglo[18]],
+	['20', arreglo[19]],
+	['21', arreglo[20]],
+	['22', arreglo[21]],
+	['23', arreglo[22]],
+	['24', arreglo[23]],
+	['25', arreglo[24]],
+	['26', arreglo[25]],
+	['27', arreglo[26]],
+	['28', arreglo[27]],
+	['29', arreglo[28]],
+	['30', arreglo[29]]
     ]);
     
     // use a DataView to 0-out all the values in the data set for the initial draw
@@ -94,8 +114,8 @@ function drawVisualization() {
     
     var options = {
         title:"Valor de amplitud",
-        width: 600,
-        height: 400,
+        width: 1500,
+        height: 500,
         bar: { groupWidth: "95%" },
         legend: { position: "none" },
         animation: {
@@ -104,7 +124,7 @@ function drawVisualization() {
         hAxis: {
             // set these values to make the initial animation smoother
             minValue: 0,
-            maxValue: 40
+            maxValue: 150
         }
     };
     
