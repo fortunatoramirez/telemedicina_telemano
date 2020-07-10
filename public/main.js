@@ -1,23 +1,22 @@
 var port = 5001;
 var socket;
 
-///var socket = io.connect('http://192.168.1.77:5001', {'forceNew': true});
+///var socket = io.connect('192.168.100.215', {'forceNew': true});
 
 
 function render(data){
 
-	var html = "Muestra: "+data;
-	/*
-	var html = data.map(function(elem, index){
-		return(`<div>
-		<strong>${elem.author}</strong>:
-		<em>${elem.text}</em>
-		</div>`);
+    var html = "Muestra: "+data;
+    /*
+    var html = data.map(function(elem, index){
+        return(`<div>
+        <strong>${elem.author}</strong>:
+        <em>${elem.text}</em>
+        </div>`);
+    }).join(" ");
+    */
 
-	}).join(" ");
-	*/
-
-	document.getElementById('angulo').innerHTML = html;
+    document.getElementById('angulo').innerHTML = html;
 }
 
 
@@ -31,36 +30,36 @@ var explodedValues = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 var arreglo = [];
 
 function init() {
-	try {
-        socket = io.connect('http://192.168.100.21:5001', {'forceNew': true});
+    try {
+        socket = io.connect('192.168.100.215:5001', {'forceNew': true});
 
         socket.on('angulo', function(data){
             //console.log(data);
             render(data);
-	    arreglo.push(parseInt(data));
-            if(arreglo.length == 10)
-		{
-		  graficar_1();
-		  arreglo = [];
-		}
-	       
+        arreglo.push(parseInt(data));
+            if(arreglo.length == 30)
+        {
+          graficar_1();
+          arreglo = [];
+        }
+           
             
         });
-	}
-	catch(ex){ 
-		console.log(ex); 
-	}
-	
+    }
+    catch(ex){ 
+        console.log(ex); 
+    }
+    
 }
 
 
 function graficar_1()
 {
 
-	//for(var i=0; i<explodedValues.length; i++) { explodedValues[i] = ; } 
-	//console.log(explodedValues);
-	drawVisualization();
-	console.log(arreglo);
+    //for(var i=0; i<explodedValues.length; i++) { explodedValues[i] = ; } 
+    //console.log(explodedValues);
+    drawVisualization();
+    console.log(arreglo);
 
 
 }
@@ -70,35 +69,35 @@ function drawVisualization() {
     var data = google.visualization.arrayToDataTable([
         ['Tracker', '1'],
         ['1', arreglo[0]],
-	['2', arreglo[1]],
-	['3', arreglo[2]],
-	['4', arreglo[3]],
-	['5', arreglo[4]],
-	['6', arreglo[5]],
-	['7', arreglo[6]],
-	['8', arreglo[7]],
-	['9', arreglo[8]],
-	['10', arreglo[9]],
-	['11', arreglo[10]],
-	['12', arreglo[11]],
-	['13', arreglo[12]],
-	['14', arreglo[13]],
-	['15', arreglo[14]],
-	['16', arreglo[15]],
-	['17', arreglo[16]],
-	['18', arreglo[17]],
-	['19', arreglo[18]],
-	['20', arreglo[19]],
-	['21', arreglo[20]],
-	['22', arreglo[21]],
-	['23', arreglo[22]],
-	['24', arreglo[23]],
-	['25', arreglo[24]],
-	['26', arreglo[25]],
-	['27', arreglo[26]],
-	['28', arreglo[27]],
-	['29', arreglo[28]],
-	['30', arreglo[29]]
+    ['2', arreglo[1]],
+    ['3', arreglo[2]],
+    ['4', arreglo[3]],
+    ['5', arreglo[4]],
+    ['6', arreglo[5]],
+    ['7', arreglo[6]],
+    ['8', arreglo[7]],
+    ['9', arreglo[8]],
+    ['10', arreglo[9]],
+    ['11', arreglo[10]],
+    ['12', arreglo[11]],
+    ['13', arreglo[12]],
+    ['14', arreglo[13]],
+    ['15', arreglo[14]],
+    ['16', arreglo[15]],
+    ['17', arreglo[16]],
+    ['18', arreglo[17]],
+    ['19', arreglo[18]],
+    ['20', arreglo[19]],
+    ['21', arreglo[20]],
+    ['22', arreglo[21]],
+    ['23', arreglo[22]],
+    ['24', arreglo[23]],
+    ['25', arreglo[24]],
+    ['26', arreglo[25]],
+    ['27', arreglo[26]],
+    ['28', arreglo[27]],
+    ['29', arreglo[28]],
+    ['30', arreglo[29]]
     ]);
     
     // use a DataView to 0-out all the values in the data set for the initial draw
@@ -226,5 +225,3 @@ function funcion_6()
 
         socket.emit("angulo", valor_1_int.toString());
 }
-
-
